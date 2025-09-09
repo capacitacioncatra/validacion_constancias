@@ -156,10 +156,10 @@ if (generateBtn) {
 
         
         // Para pruebas locales, la URL es la ruta al archivo
-        const baseUrl = "file:///D:/Archivos Universidad/Residencia/Catra/index.html";
+        //const baseUrl = "file:///D:/Archivos Universidad/Residencia/Catra/index.html";
         
         // Cuando se tenga el dominio real 
-        //const baseUrl = "https://www.catra.com.mx/verificar.html"; // 
+        const baseUrl = "https://Manue-777.github.io/Pagina_Catra/index.html"; // 
 
         const fullUrl = `${baseUrl}?folio=${folio}`;
 
