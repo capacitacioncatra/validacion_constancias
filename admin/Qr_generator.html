@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de QR - CATRA</title>
+    <!-- Enlazamos la misma hoja de estilos para un look consistente -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Estilos adicionales solo para esta página */
+        .generator-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+        }
+        #folio-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        #generate-btn {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #E60000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #qrcode-container {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px dashed #ddd;
+            min-height: 256px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #download-link {
+            display: none; /* Oculto por defecto */
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body class="page-background">
+
+    <main class="content-container generator-container">
+        <img src="../Images/Logo.png" alt="Logo CATRA" style="max-width: 200px; margin-bottom: 20px;">
+        <h1>Generador de Códigos QR</h1>
+        
+        <label for="folio-input">Introduce el Folio de la Constancia:</label>
+        <input type="text" id="folio-input" placeholder="Ej: CATRA-2025-00147122">
+        
+        <button id="generate-btn">Generar QR</button>
+        
+        <div id="qrcode-container">
+            <p>Aquí aparecerá el código QR</p>
+        </div>
+        
+        <a id="download-link" href="#" download="qr-folio.png">Descargar QR como PNG</a>
+    </main>
+    
+    <!-- 1. Cargamos la librería externa para generar QRs -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <!-- 2. Cargamos nuestro propio script para darle la lógica -->
+    <script src="../script.js"></script>
+
+</body>
+</html>

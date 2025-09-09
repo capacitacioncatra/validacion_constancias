@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Constancias - CATRA</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Agregando la fuente Montserrat desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Columna de Información de la Empresa -->
+        <aside class="brand-section">
+            <img src="Images/Logo.png" alt="Logo CATRA" class="logo">
+            <h2>CENTRO DE CAPACITACIÓN Y ADIESTRAMIENTO</h2>
+            <p>Este documento es una constancia oficial emitida por CATRA. Su autenticidad ha sido verificada a través de nuestro sistema digital.</p>
+            <div class="official-links">
+                <a href="https://agentes.stps.gob.mx/Buscador/DirectorioBusquedaCursos.aspx" target="_blank" class="link-item">
+                    <span>Ver Registro STPS</span>
+                    <img src="images/stps_logo.png" alt="Logo STPS">
+                </a>
+                <a href="http://conocer.gob.mx:6060/conocer/#/renap" target="_blank" class="link-item">
+                    <span>Red conocer</span>
+                    <img src="images/logo_conocer.png" alt="Icono de Certificado">
+                </a>
+                <a href="file:///D:/Archivos%20Universidad/Residencia/Catra/instructor.html" target="_blank" class="link-item">
+                    <span>Validación Oficial</span>
+                    <img src="images/catra_logo.png" alt="Icono de Certificado">
+                </a>
+            </div>
+            <footer>
+                <p>&copy; 2025 CATRA. Todos los derechos reservados.</p>
+            </footer>
+        </aside>
+
+        <main class="certificate-section">
+    <header class="certificate-header">
+        <h1>Constancia Verificada</h1>
+        <span class="status-badge" id="status-badge">CARGANDO...</span>
+    </header>
+    
+    <div class="participant-data">
+        <div class="data-item">
+            <span class="data-label">Nombre del Participante:</span>
+            <span class="data-value" id="participante-nombre">--</span>
+        </div>
+        <div class="data-item">
+            <span class="data-label">CURP:</span>
+            <span class="data-value" id="participante-curp">--</span>
+        </div>
+        <div class="data-item">
+            <span class="data-label">Curso Acreditado:</span>
+            <span class="data-value strong" id="participante-curso">--</span>
+        </div>
+        <div class="data-item">
+            <span class="data-label">Duración:</span>
+            <span class="data-value" id="participante-duracion">--</span>
+        </div>
+        <div class="data-item">
+            <span class="data-label">Calificación Final:</span>
+            <span class="data-value" id="participante-calificacion">--</span>
+        </div>
+        <div class="data-item">
+            <span class="data-label">Fecha de Emisión:</span>
+            <span class="data-value" id="participante-fecha">--</span>
+        </div>
+         <div class="data-item">
+            <span class="data-label">Folio de Verificación:</span>
+            <span class="data-value" id="participante-folio">--</span>
+        </div>
+    </div>
+</main>
+    </div>
+    <!-- Cargar la base de datos -->
+    <script src="admin/Data.js"></script>
+    <!-- LUEGO cargamos el script que la usa -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+</body>
+</html>
