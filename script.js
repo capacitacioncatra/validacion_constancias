@@ -47,8 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // --- (Aquí abajo sigue tu código existente para el carrusel y las pestañas) ---
-    // ...
+    // --- (Código para el carrusel y las pestañas) ---
 });
 // Espera a que todo el contenido de la página se cargue primero
 document.addEventListener('DOMContentLoaded', function() {
@@ -151,8 +150,8 @@ if (carouselImages.length > 0) {
 
         if (datos) {
             // Rellenar Nombre y Título
-            document.title = `Registro Profesional de ${datos.nombre} - CATRA`;
-            document.getElementById('instructor-nombre').textContent = datos.nombre;
+            //document.title = `Registro Profesional de ${datos.nombre} - CATRA`;
+            //document.getElementById('instructor-nombre').textContent = datos.nombre;
 
             // Rellenar Carrusel de CVs
             const carouselContainer = document.getElementById('carousel-images-container');
