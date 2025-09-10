@@ -5,8 +5,7 @@ const instructoresData = {
         nombre: "Vianey Romero Manzano",
         especialidad: "Médico Oftalmólogo",
         cv_paginas: [
-            "../Images",
-            "CVs",
+            "../Images/CVs/Vianey/CV1.jpg",
             "cv_vianey_p3.png",
             "cv_vianey_p4.png",
             "cv_vianey_p5.png",
