@@ -11,4 +11,5 @@ const constanciasData = {
         instructorId: "inst002" // ID del instructor de CATRA
     },
     
+
 };
