@@ -42,68 +42,108 @@ document.addEventListener('DOMContentLoaded', function() {
     // =======================================================
     // --- LÓGICA PARA LA PÁGINA DEL INSTRUCTOR (instructor.html) ---
     // =======================================================
-    const instructorPage = document.getElementById('carousel-images-container');
-    if (instructorPage) {
-        // console.log("Estoy en la página del instructor");
-        const urlParams = new URLSearchParams(window.location.search);
-        const instructorId = urlParams.get('id');
-        const datos = instructoresData[instructorId];
+const instructorPage = document.getElementById('carousel-images-container');
+if (instructorPage) {
 
-        if (datos) {
-             console.log("Datos del instructor encontrados:", datos);
-            // --- RELLENAR DATOS ---
-            document.title = `Registro Profesional de ${datos.nombre} - CATRA`;
-            document.getElementById('instructor-nombre').textContent = datos.nombre;
-            document.getElementById('instructor-resumen').innerHTML = datos.resumen;
+    // PARTE 1: Rellenar los datos dinámicos
+    const urlParams = new URLSearchParams(window.location.search);
+    const instructorId = urlParams.get('id');
+    const datos = instructoresData[instructorId];
 
-            // Rellenar Carrusel
-            const carouselContainer = document.getElementById('carousel-images-container');
-            carouselContainer.innerHTML = '';
-            datos.cv_paginas.forEach((pagina, index) => {
-                const img = document.createElement('img');
-                img.src = `images/${pagina}`;
-                img.alt = `CV de ${datos.nombre} - Página ${index + 1}`;
-                if (index === 0) img.classList.add('active');
-                carouselContainer.appendChild(img);
-            });
+    if (datos) {
+        // Rellenar datos si se encontraron
+        document.title = `Registro Profesional de ${datos.nombre} - CATRA`;
+        document.getElementById('instructor-nombre').textContent = datos.nombre;
+        document.getElementById('instructor-resumen').innerHTML = datos.resumen;
 
-            // Rellenar Certificaciones
-            const credentialsContainer = document.getElementById('credentials-list-container');
-            credentialsContainer.innerHTML = '';
-            datos.certificaciones.forEach(cert => {
-                const li = document.createElement('li');
-                li.innerHTML = cert;
-                credentialsContainer.appendChild(li);
-            });
+        const carouselContainer = document.getElementById('carousel-images-container');
+        carouselContainer.innerHTML = '';
+        datos.cv_paginas.forEach((pagina, index) => {
+            const img = document.createElement('img');
+            img.src = `images/${pagina}`;
+            img.alt = `CV de ${datos.nombre} - Página ${index + 1}`;
+            if (index === 0) img.classList.add('active');
+            carouselContainer.appendChild(img);
+        });
 
-            // Rellenar Generalidades
-            const generalitiesContainer = document.getElementById('generalities-list-container');
-            generalitiesContainer.innerHTML = '';
-            for (const [label, value] of Object.entries(datos.generalidades)) {
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'detail-item-v';
-                itemDiv.innerHTML = `<span class="detail-label-v">${label}:</span><p class="detail-value-v">${value}</p>`;
-                generalitiesContainer.appendChild(itemDiv);
-            }
+        const credentialsContainer = document.getElementById('credentials-list-container');
+        credentialsContainer.innerHTML = '';
+        datos.certificaciones.forEach(cert => {
+            const li = document.createElement('li');
+            li.innerHTML = cert;
+            credentialsContainer.appendChild(li);
+        });
 
-            // --- LÓGICA DE INTERACTIVIDAD (SOLO si se encontraron datos) ---
-            const carouselImages = document.querySelectorAll('.carousel-images img');
-            const tabs = document.querySelectorAll('.tabs-nav li');
-
-            if (carouselImages.length > 0) {
-                // (Aquí va la lógica del carrusel, como la teníamos)
-            }
-
-            if (tabs.length > 0) {
-                // (Aquí va la lógica de las pestañas, como la teníamos)
-            }
-
-        } else {
-             console.log("Datos del instructor NO encontrados para el ID:", instructorId);
-            const contentContainer = document.querySelector('.panel-content');
-            contentContainer.innerHTML = `<h1 style="color: #E60000;">Instructor no encontrado</h1><p>El ID <strong>${instructorId || 'desconocido'}</strong> no corresponde a nuestros registros.</p>`;
+        const generalitiesContainer = document.getElementById('generalities-list-container');
+        generalitiesContainer.innerHTML = '';
+        for (const [label, value] of Object.entries(datos.generalidades)) {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'detail-item-v';
+            itemDiv.innerHTML = `<span class="detail-label-v">${label}:</span><p class="detail-value-v">${value}</p>`;
+            generalitiesContainer.appendChild(itemDiv);
         }
+    } else {
+        // Manejar error si el ID no es válido
+        const contentContainer = document.querySelector('.panel-content');
+        contentContainer.innerHTML = `<h1 style="color: #E60000;">Instructor no encontrado</h1><p>El ID <strong>${instructorId || 'desconocido'}</strong> no corresponde a nuestros registros.</p>`;
     }
+
+    // PARTE 2: Activar la interactividad (SIEMPRE se ejecuta en esta página)
+
+    // --- Lógica de Pestañas ---
+    const tabs = document.querySelectorAll('.tabs-nav li');
+    const contents = document.querySelectorAll('.tab-content');
+    
+    // Ocultar todos los contenidos excepto el primero
+    contents.forEach((content, index) => {
+        if (index !== 0) {
+            content.style.display = 'none';
+        }
+    });
+
+    // Añadir evento de clic a cada pestaña
+    tabs.forEach(tab => {
+        tab.addEventListener('click', event => {
+            event.preventDefault();
+            tabs.forEach(item => item.classList.remove('active'));
+            tab.classList.add('active');
+            contents.forEach(content => content.style.display = 'none');
+            const targetContent = document.querySelector(tab.querySelector('a').getAttribute('href'));
+            if (targetContent) targetContent.style.display = 'block';
+        });
+    });
+
+    // --- Lógica del Carrusel ---
+    const carouselImages = document.querySelectorAll('.carousel-images img');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const pageCounter = document.getElementById('page-counter');
+    
+    if (carouselImages.length > 0) {
+        let currentIndex = 0;
+        const totalImages = carouselImages.length;
+
+        function updateCarousel() {
+            carouselImages.forEach((img, index) => {
+                img.classList.toggle('active', index === currentIndex);
+            });
+            pageCounter.textContent = `${currentIndex + 1} / ${totalImages}`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalImages;
+            updateCarousel();
+        });
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            updateCarousel();
+        });
+        
+        updateCarousel(); // Inicializar
+    } else {
+        pageCounter.textContent = "0 / 0";
+    }
+}
 // --- LÓGICA PARA EL GENERADOR DE CÓDIGOS QR ---
 const generateBtn = document.getElementById('generate-btn');
 
