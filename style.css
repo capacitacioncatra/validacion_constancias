@@ -1,30 +1,43 @@
-/* --- Reseteo Básico y Estilos Globales --- */
+/* ======================================================= */
+/* --- ESTILOS GLOBALES Y TIPOGRAFÍA --- */
+/* ======================================================= */
+
+/* NOTA: He añadido la importación de Poppins, como habíamos acordado */
 body {
-    font-family: 'Montserrat', sans-serif; /* Usamos la nueva fuente */
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    background-color: #f0f2f5; /* Un gris muy claro de fondo */
+    background-color: #f0f2f5;
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-/* --- Contenedor Principal --- */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+/* ======================================================= */
+/* --- PÁGINA DE VERIFICACIÓN (index.html) --- */
+/* ======================================================= */
+
 .container {
     display: flex;
     max-width: 1100px;
     width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra sutil para un efecto "flotante" */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
 }
 
-/* --- Columna Izquierda: Información de la Marca --- */
+/* Columna Izquierda */
 .brand-section {
-    background-color: #1a1a1a; /* Fondo negro/gris oscuro */
+    background-color: #1a1a1a;
     color: #ffffff;
     padding: 40px;
     width: 35%;
@@ -36,24 +49,20 @@ body {
 .brand-section .logo {
     max-width: 200px;
     margin-bottom: 20px;
-    display: block;           /* Hace que la imagen se comporte como un bloque */
-    margin-left: auto;        /* Margen izquierdo automático */
-    margin-right: auto;       /* Margen derecho automático */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* --- CÓDIGO NUEVO Y MEJORADO --- */
 .brand-section h2 {
     font-weight: 600;
     font-size: 1.2em;
     border-bottom: 2px solid #E60000;
     padding-bottom: 10px;
-
-    /* --- LÍNEAS NUEVAS PARA CENTRAR --- */
     display: inline-block;  
     align-self: center;     
     text-align: center;     
 }
-
 
 .brand-section p {
     font-size: 0.9em;
@@ -61,12 +70,10 @@ body {
     color: #cccccc;
 }
 
-/* Contenedor principal de los enlaces */
 .official-links {
     margin-top: 20px;
 }
 
-/* Estilo individual para cada enlace */
 .link-item {
     display: flex;                 
     align-items: center;           
@@ -81,14 +88,11 @@ body {
     transition: all 0.3s ease;     
 }
 
-/* Efecto al pasar el mouse por encima */
 .link-item:hover {
-    background-color: #E60000;      
-    transform: translateY(-2px);    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #f5f5f5; /* MEJORA: Un hover más sutil */
+    color: #E60000;
 }
 
-/* Estilo para la imagen dentro del enlace */
 .link-item img {
     height: 30px;      
     width: auto;       
@@ -101,8 +105,7 @@ body {
     margin-top: 30px;
 }
 
-
-/* --- Columna Derecha: Datos de la Constancia --- */
+/* Columna Derecha */
 .certificate-section {
     padding: 40px;
     width: 65%;
@@ -117,14 +120,8 @@ body {
     margin-bottom: 30px;
 }
 
-.certificate-header h1 {
-    margin: 0;
-    font-size: 1.8em;
-    color: #1a1a1a;
-}
-
 .status-badge {
-    background-color: #28a745; /* Verde para indicar "auténtico" */
+    background-color: #28a745;
     color: white;
     padding: 8px 15px;
     border-radius: 20px;
@@ -133,11 +130,10 @@ body {
     text-transform: uppercase;
 }
 
-/* --- Estilos para cada dato del participante --- */
 .participant-data {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espacio entre cada dato */
+    gap: 20px;
 }
 
 .data-item {
@@ -157,7 +153,7 @@ body {
     font-weight: 600;
     background-color: #f9f9f9;
     padding: 10px;
-    border-left: 4px solid #E60000; /* Acento rojo */
+    border-left: 4px solid #E60000;
     border-radius: 0 5px 5px 0;
 }
 
@@ -166,19 +162,8 @@ body {
     color: #E60000;
 }
 
-/* --- Diseño Responsivo para Móviles --- */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .brand-section, .certificate-section {
-        width: 100%;
-        box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-    }
-}
-
 /* ======================================================= */
-/* --- ESTILOS PARA LA PÁGINA DEL INSTRUCTOR --- */
+/* --- PÁGINA DEL INSTRUCTOR (instructor.html) --- */
 /* ======================================================= */
 
 .page-background {
@@ -194,15 +179,13 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
 }
 
-/* 1. Estilos para el nuevo contenedor del encabezado (el bloque oscuro) */
 .header-block {
     background-image: linear-gradient(to bottom, #1a1a1a 0%, #000000 70%, #990000 100%);
     padding: 40px;
-    border-radius: 8px 8px 0 0; /* Redondea solo las esquinas superiores */
-    margin: -40px -40px 40px -40px; /* "Truco" para que ocupe todo el ancho del contenedor padre */
+    border-radius: 8px 8px 0 0;
+    margin: -40px -40px 40px -40px;
 }
 
-/* 2. El layout interior (logo + texto) no cambia, solo su contenedor */
 .page-heading-layout {
     display: flex;
     align-items: center;
@@ -222,39 +205,18 @@ body {
     flex: 1;
 }
 
-/* 3. Hacemos que el texto dentro del bloque oscuro sea blanco para que sea legible */
-.header-block h1 {
-    margin-top: 0;
-    font-size: 2.5em;
-    color: #ffffff; /* Color de texto blanco */
-}
-
 .header-block .intro-text {
     margin-bottom: 0;
     font-size: 1.1em;
     line-height: 1.7;
-    color: #cccccc; /* Un gris claro para el párrafo, para que no sea tan brillante como el título */
-    line-height: 1.5;
+    color: #cccccc;
     text-align: justify;
 }
 
-/* 4. Hacemos que el texto en negrita (<strong>) también sea legible */
 .header-block .intro-text strong {
     color: #ffffff;
 }
 
-/* --- Responsive (no cambia mucho, solo se ajusta el contenedor principal) --- */
-@media (max-width: 768px) {
-    .page-heading-layout {
-        flex-direction: column;
-        text-align: center;
-    }
-    .heading-logo {
-        flex-basis: 180px;
-    }
-}
-
-/* --- Sección de Logos de Socios/Acreditaciones --- */
 .partner-logos {
     display: flex;
     justify-content: space-around;
@@ -276,13 +238,90 @@ body {
     opacity: 1;
 }
 
-/* --- Navegación de Pestañas (Tabs) --- */
+.main-content-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.document-image-wrapper {
+    flex: 0 0 35%;
+    min-width: 300px;
+    position: sticky;
+    top: 20px;
+}
+
+.tabs-section {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    max-height: 70vh;
+}
+
+.carousel-images img {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.carousel-images img.active {
+    position: relative;
+    opacity: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.page-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Pestañas */
 .tabs-nav {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
 }
-
 
 .tabs-nav ul {
     list-style: none;
@@ -310,24 +349,28 @@ body {
     border-bottom-color: #E60000;
 }
 
-/* --- Contenido de las Pestañas --- */
+/* Contenido de Pestañas */
 .tab-content {
     padding-top: 0px;
 }
 
 .tab-content h2 {
     font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     color: #1a1a1a;
     border-bottom: 2px solid #E60000;
     padding-bottom: 10px;
     display: block;          
     width: fit-content;      
     margin-left: auto;       
-    margin-right: auto;      
+    margin-right: auto;
+    margin-bottom: 15px;
 }
 
 .tab-content h3 {
     font-size: 1.2em;
+    font-weight: 600;
     color: #333;
     margin-top: 30px;
     margin-bottom: 15px;
@@ -335,103 +378,81 @@ body {
 
 .tab-content p,
 .tab-content li {
-    
-    line-height: 1.5;
+    line-height: 1.7;
     text-align: justify;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
 }
 
-/* --- Estilos para el diseño principal de 2 columnas (Cédula + Pestañas) --- */
-.main-content-layout {
+.legal-list {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+.credentials-list {
+    padding-left: 20px;
+}
+
+.credentials-list li::marker {
+    color: #E60000;
+    font-weight: bold;
+}
+
+/* ================================================================= */
+/* --- ESTILOS PARA LA LISTA DE GENERALIDADES (DISEÑO HORIZONTAL) --- */
+/* ================================================================= */
+
+.general-info-list {
     display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Estilos para la columna IZQUIERDA (la imagen) */
-.document-image-wrapper {
-    flex: 0 0 35%;
-    min-width: 300px;
-    position: sticky; /* Fija la imagen para que se quede visible al hacer scroll */
-    top: 20px;
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 1.1em;
 }
 
-.carousel-container {
-    position: relative; /* Clave para posicionar los botones y el contador encima */
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    overflow: hidden; /* Oculta cualquier parte de los botones que se salga */
-    max-height: 70vh;
+.info-item:last-child {
+    border-bottom: none;
 }
 
-.carousel-images img {
-    width: 100%;
-    display: block; /* Asegura que la imagen no tenga espacios extra debajo */
-    position: absolute; /* Apila todas las imágenes en el mismo lugar */
-    top: 0;
-    left: 0;
-    opacity: 0; /* Oculta todas las imágenes por defecto */
-    transition: opacity 0.4s ease; /* Transición suave de fundido */
-    max-height: 70vh;    /* La imagen no será más alta que el contenedor */
-    object-fit: contain;
-}
-
-.carousel-images img.active {
-    position: relative; /* La imagen activa necesita ser relativa para dar altura al contenedor */
-    opacity: 1; /* Muestra solo la imagen activa */
-}
-
-/* Estilos para los botones de navegación */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.2);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-btn.prev {
-    left: 10px;
-}
-
-.carousel-btn.next {
-    right: 10px;
-}
-
-/* Estilos para el contador de páginas */
-.page-counter {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 14px;
+.info-label {
+    color: #555;
     font-weight: 600;
 }
 
-/* Estilos para la columna DERECHA (toda la sección de pestañas) */
-.tabs-section {
-    flex: 1; /* Ocupa el espacio restante */
-    min-width: 0; /* Previene problemas de desbordamiento en flexbox */
+.info-value {
+    color: #1a1a1a;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
 }
 
-/* --- Responsive para la nueva estructura --- */
-@media (max-width: 992px) { /* Ajustamos el punto de quiebre para tablets */
+.info-value::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 22px;
+    background-color: #E60000;
+    margin-right: 15px;
+    border-radius: 2px;
+}
+
+.info-value.highlight {
+    color: #E60000;
+}
+
+/* ======================================================= */
+/* --- RESPONSIVE Y ANIMACIONES --- */
+/* ======================================================= */
+
+@media (max-width: 992px) {
     .main-content-layout {
         flex-direction: column;
         gap: 30px;
@@ -439,88 +460,49 @@ body {
     .document-image-wrapper {
         width: 100%;
         min-width: auto;
-        position: static; /* Quitamos el efecto sticky en móvil */
-        order: -1; /* Mueve la imagen para que aparezca primero */
+        position: static;
+        order: -1;
     }
 }
-/* --- Estilos para la nueva sección de Generalidades --- */
-.general-info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espacio entre cada línea de información */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .brand-section, .certificate-section {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .page-heading-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    .heading-logo {
+        flex-basis: 180px;
+    }
 }
 
-.info-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Empuja la etiqueta a la izq y el valor a la der */
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #e0e0e0; /* Una línea sutil para separar */
-    font-size: 1.1em;
-}
-
-.info-item:last-child {
-    border-bottom: none; /* No poner línea en el último elemento */
-}
-
-.info-label {
-    color: #555; /* Un color de texto estándar para la etiqueta */
-}
-
-.info-value {
-    color: #1a1a1a; 
-    font-weight: 700; 
-    text-align: right; 
-}
-/* ======================================================= */
-/* --- ANIMACIÓN DE ENTRADA PARA LAS PÁGINAS --- */
-/* ======================================================= */
-
-/* 1. Definimos los pasos de la animación "fadeInUp" */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px); /* El elemento empieza 20px más abajo */
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);    /* El elemento termina en su posición original */
+        transform: translateY(0);
     }
 }
-/* 2. Creamos una clase para aplicar la animación */
+
 .animate-on-load {
-    /* Estado inicial antes de que se active la animación */
     opacity: 0;
-    
-    /* Aplicamos la animación que creamos */
     animation-name: fadeInUp;
-    animation-duration: 0.8s; /* Duración del efecto */
-    animation-timing-function: ease-out; /* Hace que el final sea más suave */
-    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
-/* 3. Aplicamos la animación con un retraso escalonado a los elementos
-   de la página del instructor para un efecto más elegante. */
-
-/* El encabezado aparece primero */
-.header-block.animate-on-load {
-    animation-delay: 0.1s;
-}
-
-/* Los logos de socios aparecen un poco después */
-.partner-logos.animate-on-load {
-    animation-delay: 0.3s;
-}
-
-/* El contenido principal (CV y pestañas) aparece al final */
-.main-content-layout.animate-on-load {
-    animation-delay: 0.5s;
-}
-
-/* También podemos animar la página principal (la de la constancia) */
-.brand-section.animate-on-load {
-    animation-delay: 0.1s;
-}
-.certificate-section.animate-on-load {
-    animation-delay: 0.3s;
-}
+.header-block.animate-on-load { animation-delay: 0.1s; }
+.partner-logos.animate-on-load { animation-delay: 0.3s; }
+.main-content-layout.animate-on-load { animation-delay: 0.5s; }
+.brand-section.animate-on-load { animation-delay: 0.1s; }
+.certificate-section.animate-on-load { animation-delay: 0.3s; }
