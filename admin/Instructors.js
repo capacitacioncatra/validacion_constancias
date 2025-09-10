@@ -14,22 +14,22 @@ const instructoresData = {
             "../Images/CVs/Vianey/CV7.jpg",
         ],
         certificaciones: [
-            "<strong>Acreditación por el Consejo Mexicano de Oftalmología (2024)</strong>, la máxima autoridad para la certificación de especialistas en el país.",
-            "<strong>International Diploma in Harmonization, Profiling and Modeling</strong> (Toxina Botulínica, etc.), otorgado por Overall Alianza Americana LLC en Florida, EE. UU. (2025).",
-            "<strong>Certificación en el II Curso Latinoamericano de Actualización en Oculoplástica (2022)</strong>, con 22 puntos curriculares ante el CMO.",
-            "Participación como <strong>Asistente en el congreso 'Oculoplástica Sin Fronteras V'</strong> (SOPANOP, 2023).",
-            "Participación en el <strong>Pan-American Ocular Oncology Course (2022)</strong>.",
-            "Constancia como <strong>Ponente</strong> en el 18º Congreso de Investigación en Salud Pública (2019).",   
+            "Cedula profesional en Medico Cirujano (UNAM)",
+            "Especialista en Oftalmología (IMSS-CMN Siglo XXI).", 
+            "Alta Especialidad en Oncología Ocular.",
+            "Acreditación por el Consejo Mexicano de Oftalmología.",
+            "Formación internacional en procedimientos estéticos con toxina botulínica y biomateriales.",
         ],
         
         resumen: "Profesional de la salud especializada en oftalmología, con sólida formación académica y amplia experiencia clínica en oncología ocular, cirugía oftalmológica y prevención de enfermedades visuales, <strong>experiencia en aplicación de toxina botulínica</strong>, ofreciendo tratamientos seguros y efectivos que combinan la salud visual con el bienestar estético. Acreditada por el Consejo Mexicano de Oftalmología y con trayectoria respaldada por la participación en cursos y congresos nacionales e internacionales.",
 
         generalidades: {
-            "NOMBRE COMPLETO": "VIANEY ROMERO MANZANO",
-            "CÉDULA PROFESIONAL": "14815320",
-            "ESPECIALIDAD PRINCIPAL": "MÉDICO OFTALMÓLOGO",
-            "ALMA MÁTER (LICENCIATURA)": "UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO (UNAM)",
-            "AÑO DE ACREDITACIÓN POR CONSEJO": "2024"
+            "Nombre completo": "VIANEY ROMERO MANZANO",
+            "Curp:": "ROMV930830MOCMNN02",
+            "Folio": "inst001",
+            "Especialidad": "MÉDICO OFTALMÓLOGO",
+            "Certificaciones": "Acreditación por el Consejo Mexicano de Oftalmología (2024), la máxima autoridad para la certificación de especialistas en el país.",
+            
         }
     },
     
