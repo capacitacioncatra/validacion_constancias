@@ -5,8 +5,8 @@ const instructoresData = {
         nombre: "Vianey Romero Manzano",
         especialidad: "Médico Oftalmólogo",
         cv_paginas: [
-            "CVs/Vianey/CV1.jpg",
-            "cv_vianey_p2.png",
+            "./Images.jpg",
+            "CVs",
             "cv_vianey_p3.png",
             "cv_vianey_p4.png",
             "cv_vianey_p5.png",
@@ -19,7 +19,7 @@ const instructoresData = {
             "<strong>Certificación en el II Curso Latinoamericano de Actualización en Oculoplástica (2022)</strong>, con 22 puntos curriculares ante el CMO.",
             "Participación como <strong>Asistente en el congreso 'Oculoplástica Sin Fronteras V'</strong> (SOPANOP, 2023).",
             "Participación en el <strong>Pan-American Ocular Oncology Course (2022)</strong>.",
-            "Constancia como <strong>Ponente</strong> en el 18º Congreso de Investigación en Salud Pública (2019)."    
+            "Constancia como <strong>Ponente</strong> en el 18º Congreso de Investigación en Salud Pública (2019).",   
         ],
         
         resumen: "Profesional de la salud especializada en oftalmología, con sólida formación académica y amplia experiencia clínica en oncología ocular, cirugía oftalmológica y prevención de enfermedades visuales, <strong>experiencia en aplicación de toxina botulínica</strong>, ofreciendo tratamientos seguros y efectivos que combinan la salud visual con el bienestar estético. Acreditada por el Consejo Mexicano de Oftalmología y con trayectoria respaldada por la participación en cursos y congresos nacionales e internacionales.",
