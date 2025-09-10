@@ -74,14 +74,20 @@ if (instructorPage) {
             credentialsContainer.appendChild(li);
         });
 
+        // Rellenar Lista de Generalidades (con el nuevo diseño horizontal)
         const generalitiesContainer = document.getElementById('generalities-list-container');
-        generalitiesContainer.innerHTML = '';
+        generalitiesContainer.innerHTML = ''; // Limpiar el contenedor
+        generalitiesContainer.className = 'general-info-list'; // Le asignamos la clase principal
+
         for (const [label, value] of Object.entries(datos.generalidades)) {
-            const itemDiv = document.createElement('div');
-            itemDiv.className = 'detail-item-v';
-            itemDiv.innerHTML = `<span class="detail-label-v">${label}:</span><p class="detail-value-v">${value}</p>`;
-            generalitiesContainer.appendChild(itemDiv);
-        }
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'info-item'; // <-- Nueva clase para la fila
+        itemDiv.innerHTML = `
+        <span class="info-label">${label}:</span>
+        <span class="info-value">${value}</span>
+    `; // <-- Nuevo HTML con las clases correctas
+    generalitiesContainer.appendChild(itemDiv);
+}
     } else {
         // Manejar error si el ID no es válido
         const contentContainer = document.querySelector('.panel-content');
