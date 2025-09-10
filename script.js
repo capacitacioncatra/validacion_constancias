@@ -1,5 +1,5 @@
 // script.js
-console.log("¡El archivo script.js se ha cargado!");
+
 // Espera a que todo el contenido de la página se cargue primero
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -30,10 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('participante-fecha').textContent = datos.fecha;
             document.getElementById('participante-folio').textContent = datos.folio;
 
-            const validationButton = document.querySelector('a[href*="instructor.html"]');
+            const validationButton = document.getElementById('instructor-link');
+
+            // Comprobamos que el botón exista y que la constancia tenga un instructorId
             if (validationButton && datos.instructorId) {
-            validationButton.href = `instructor.html?id=${datos.instructorId}`;
-    }
+            // Construimos la URL COMPLETA Y CORRECTA
+            validationButton.href = `https://manue-777.github.io/Pagina_Catra/instructor.html?id=${datos.instructorId}`;
+            }
 
         } else {
             // ¡Constancia NO Válida! Mostramos un mensaje de error.
