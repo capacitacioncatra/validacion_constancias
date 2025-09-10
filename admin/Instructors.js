@@ -1,5 +1,5 @@
 // admin/instructors.js
-console.log("¡El archivo script.js se ha cargado!");
+
 const instructoresData = {
     "inst001": {
         nombre: "Vianey Romero Manzano",
