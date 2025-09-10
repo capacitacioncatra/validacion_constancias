@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('participante-fecha').textContent = datos.fecha;
             document.getElementById('participante-folio').textContent = datos.folio;
 
+            const validationButton = document.querySelector('a[href*="instructor.html"]');
+            if (validationButton && datos.instructorId) {
+            validationButton.href = `instructor.html?id=${datos.instructorId}`;
+    }
+
         } else {
             // ¡Constancia NO Válida! Mostramos un mensaje de error.
             document.getElementById('status-badge').textContent = 'NO VÁLIDO';
@@ -136,6 +141,57 @@ if (carouselImages.length > 0) {
     // 6. Llamar a la función una vez al principio para mostrar la primera imagen
     updateCarousel();
 }
+    // --- LÓGICA PARA LA PÁGINA DINÁMICA DEL INSTRUCTOR ---
+    const instructorPage = document.querySelector('.panel-layout'); // Usamos un selector de la página del instructor
+
+    if (instructorPage) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const instructorId = urlParams.get('id');
+        const datos = instructoresData[instructorId];
+
+        if (datos) {
+            // Rellenar Nombre y Título
+            document.title = `Registro Profesional de ${datos.nombre} - CATRA`;
+            document.getElementById('instructor-nombre').textContent = datos.nombre;
+
+            // Rellenar Carrusel de CVs
+            const carouselContainer = document.getElementById('carousel-images-container');
+            datos.cv_paginas.forEach((pagina, index) => {
+                const img = document.createElement('img');
+                img.src = `images/${pagina}`;
+                img.alt = `CV de ${datos.nombre} - Página ${index + 1}`;
+                if (index === 0) {
+                    img.classList.add('active'); // La primera es visible
+                }
+                carouselContainer.appendChild(img);
+            });
+
+            // Rellenar Lista de Certificaciones
+            const credentialsContainer = document.getElementById('credentials-list-container');
+            datos.certificaciones.forEach(cert => {
+                const li = document.createElement('li');
+                li.innerHTML = cert; // Usamos innerHTML para que reconozca las etiquetas <strong>
+                credentialsContainer.appendChild(li);
+            });
+
+            // Rellenar Lista de Generalidades
+            const generalitiesContainer = document.getElementById('generalities-list-container');
+            for (const [label, value] of Object.entries(datos.generalidades)) {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'detail-item-v';
+                itemDiv.innerHTML = `
+                    <span class="detail-label-v">${label}:</span>
+                    <p class="detail-value-v">${value}</p>
+                `;
+                generalitiesContainer.appendChild(itemDiv);
+            }
+
+        } else {
+            // Manejar error si el ID no es válido
+            const contentContainer = document.querySelector('.panel-content');
+            contentContainer.innerHTML = `<h1 style="color: #E60000;">Instructor no encontrado</h1><p>El ID <strong>${instructorId || 'desconocido'}</strong> no corresponde a ningún instructor en nuestros registros.</p>`;
+        }
+    }
 // --- LÓGICA PARA EL GENERADOR DE CÓDIGOS QR ---
 const generateBtn = document.getElementById('generate-btn');
 
