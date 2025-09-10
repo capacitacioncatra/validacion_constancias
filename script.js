@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             // CORRECCIÓN: Usar la URL correcta del repositorio
-            const baseUrl = "https://manue-777.github.io/CATRA/index.html"; 
+            const baseUrl = "https://manue-777.github.io/Pagina_Catra/index.html"; 
             const fullUrl = `${baseUrl}?folio=${folio}`;
             
             qrContainer.innerHTML = "";
