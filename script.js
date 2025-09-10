@@ -1,5 +1,5 @@
 // script.js
-
+console.log("¡El archivo script.js se ha cargado!");
 // Espera a que todo el contenido de la página se cargue primero
 document.addEventListener('DOMContentLoaded', function() {
     
