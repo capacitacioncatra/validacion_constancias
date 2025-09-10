@@ -6,11 +6,12 @@ const instructoresData = {
         especialidad: "Médico Oftalmólogo",
         cv_paginas: [
             "../Images/CVs/Vianey/CV1.jpg",
-            "cv_vianey_p3.png",
-            "cv_vianey_p4.png",
-            "cv_vianey_p5.png",
-            "cv_vianey_p6.png",
-            "cv_vianey_p7.png"
+            "../Images/CVs/Vianey/CV2.jpg",
+            "../Images/CVs/Vianey/CV3.jpg",
+            "../Images/CVs/Vianey/CV4.jpg",
+            "../Images/CVs/Vianey/CV5.jpg",
+            "../Images/CVs/Vianey/CV6.jpg",
+            "../Images/CVs/Vianey/CV7.jpg",
         ],
         certificaciones: [
             "<strong>Acreditación por el Consejo Mexicano de Oftalmología (2024)</strong>, la máxima autoridad para la certificación de especialistas en el país.",
