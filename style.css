@@ -192,6 +192,8 @@ h1, h2, h3 {
     align-items: center; /* Centra verticalmente el logo y el texto */
     gap: 30px; /* Espacio entre el logo y el texto */
     padding: 20px 0; /* Espacio vertical para que no se sienta apretado */
+    padding: 20px 30px; /* 20px arriba/abajo, 30px a los lados */
+    box-sizing: border-box; 
 }
 
 /* 2. El logo tiene un tamaño fijo y no se encoge */
