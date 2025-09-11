@@ -187,26 +187,30 @@ h1, h2, h3 {
     margin: -40px -40px 40px -40px;
 }
 
-/* El contenedor del layout interior */
 .page-heading-layout {
-    display: flex; /* Mantiene al logo y al texto en la misma línea */
-    align-items: center; /* Centra verticalmente el logo */
-    position: relative; /* ¡CRÍTICO! Este es el marco de referencia */
-    min-height: 100px; /* Le damos una altura mínima para que el centrado funcione bien */
+    position: relative; /* Sigue siendo el marco para el posicionamiento */
+    min-height: 150px;  /* Le damos una altura fija para que haya espacio */
+    display: flex; /* Esto lo necesitamos para centrar verticalmente el logo */
+    align-items: center;
 }
 
-/* El contenedor del logo */
+/* 2. El logo se posiciona de forma absoluta a la izquierda */
 .heading-logo {
-    flex: 0 0 200px; /* Ancho fijo para el logo */
+    position: absolute; /* Lo sacamos del flujo */
+    left: 0; /* Lo pegamos a la izquierda */
+    top: 50%; /* Lo centramos verticalmente */
+    transform: translateY(-50%);
+    width: 200px; /* Le damos un ancho fijo */
 }
 
-/* El contenedor del texto (la pieza clave) */
+/* 3. El texto se posiciona de forma absoluta en el centro */
 .heading-text {
-    position: absolute; /* Saca el texto del flujo normal */
-    left: 50%; /* Lo mueve al 50% del ancho del contenedor */
-    transform: translateX(-50%); /* Lo regresa la mitad de su propio ancho para centrarlo */
-    text-align: center; /* Centra el h1 y el p dentro de este bloque */
-    width: 100%; /* Asegura que tenga un marco de referencia para el centrado */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centrado horizontal Y vertical perfecto */
+    text-align: center;
+    width: 100%; /* Ocupa todo el ancho para un centrado correcto */
 }
 
 /* El título "Registros del..." */
