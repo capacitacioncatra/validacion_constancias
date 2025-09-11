@@ -204,7 +204,7 @@ h1, h2, h3 {
 
 .heading-text {
     position: absolute; /* Saca el texto del flujo normal */
-    left: 50%; /* Lo mueve al 50% del ancho del contenedor */
+    left: 70%; /* Lo mueve al 50% del ancho del contenedor */
     transform: translateX(-50%); /* Lo regresa la mitad de su propio ancho para centrarlo perfectamente */
     text-align: center; /* Centra el texto dentro del bloque */
 }
