@@ -188,32 +188,24 @@ h1, h2, h3 {
 }
 
 .page-heading-layout {
-    position: relative; /* Sigue siendo el marco para el posicionamiento */
-    min-height: 150px;  /* Le damos una altura fija para que haya espacio */
-    display: flex; /* Esto lo necesitamos para centrar verticalmente el logo */
+    display: flex;
     align-items: center;
+    justify-content: space-between; /* Clave: Separa los elementos al máximo */
+    width: 100%;
 }
-
-/* 2. El logo se posiciona de forma absoluta a la izquierda */
 .heading-logo {
-    position: absolute; /* Lo sacamos del flujo */
-    left: 0; /* Lo pegamos a la izquierda */
-    top: 50%; /* Lo centramos verticalmente */
-    transform: translateY(-50%);
-    width: 200px; /* Le damos un ancho fijo */
+    width: 200px; /* Ancho fijo */
 }
 
-/* 3. El texto se posiciona de forma absoluta en el centro */
+
 .heading-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Centrado horizontal Y vertical perfecto */
-    text-align: center;
-    width: 100%; /* Ocupa todo el ancho para un centrado correcto */
+    text-align: center; /* Centra el h1 y el p dentro de sí mismo */
 }
 
-/* El título "Registros del..." */
+.heading-spacer {
+    width: 200px; /* ¡Mismo ancho que el logo! */
+}
+
 .header-block h1 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -222,8 +214,7 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-/* El nombre del instructor */
-.instructor-name-header {
+instructor-name-header {
     margin: 0;
     font-size: 1.5em;
     color: #cccccc;
