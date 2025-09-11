@@ -28,7 +28,13 @@ const instructoresData = {
             "Curp:": "ROMV930830MOCMNN02",
             "Folio": "inst001",
             "Especialidad": "MÉDICO OFTALMÓLOGO",
-            "Certificaciones": "Acreditación por el Consejo Mexicano de Oftalmología (2024), la máxima autoridad para la certificación de especialistas en el país.",
+             "Certificaciones": [
+                "<strong>Cédula profesional:</strong> Médico Cirujano (UNAM, 2012-2019).",
+                "<strong>Acreditación oficial:</strong> Consejo Mexicano de Oftalmología (2024).",
+                "<strong>Constancias de participación:</strong> Congresos nacionales e internacionales de oftalmología (uveítis, oculoplástica, oncología ocular, cirugía orbitaria).",
+                "<strong>Diploma Internacional:</strong> HARMONIZATION, PROFILING AND MODELING (USA, 2025).",
+                "<strong>Certificados de asistencia y ponencias:</strong> Congresos médicos (ej. 18° Congreso de Investigación en Salud Pública)."
+            ]
             
         }
     },

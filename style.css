@@ -398,7 +398,36 @@ h1, h2, h3 {
     color: #E60000;
     font-weight: bold;
 }
+/* Contenedor para el layout vertical (etiqueta arriba, contenido abajo) */
+.info-item-vertical {
+    display: flex;
+    flex-direction: column; /* Apila la etiqueta y el valor */
+    align-items: flex-start; /* Alinea todo a la izquierda */
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 1.1em;
+}
 
+.info-item-vertical .info-label {
+    margin-bottom: 10px; /* Espacio entre la etiqueta "Certificaciones" y la lista */
+}
+
+/* Contenedor para la lista de certificaciones */
+.info-value-list {
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+.info-value-list ul {
+    list-style: disc; /* Viñetas de círculo */
+    padding-left: 20px;
+    margin: 0;
+    text-align: left; /* Asegura que el texto de la lista esté alineado a la izquierda */
+}
+
+.info-value-list ul li {
+    margin-bottom: 8px; /* Espacio entre cada certificación */
+    text-align: justify; /* Justifica el texto de cada certificación */
+}
 /* ================================================================= */
 /* --- ESTILOS PARA LA LISTA DE GENERALIDADES (DISEÑO HORIZONTAL) --- */
 /* ================================================================= */

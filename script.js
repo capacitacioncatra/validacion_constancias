@@ -74,19 +74,42 @@ if (instructorPage) {
             credentialsContainer.appendChild(li);
         });
 
-        // Rellenar Lista de Generalidades (con el nuevo diseño horizontal)
         const generalitiesContainer = document.getElementById('generalities-list-container');
-        generalitiesContainer.innerHTML = ''; // Limpiar el contenedor
-        generalitiesContainer.className = 'general-info-list'; // Le asignamos la clase principal
+generalitiesContainer.innerHTML = ''; // Limpiar el contenedor
+generalitiesContainer.className = 'general-info-list'; // Asignar la clase principal
 
-        for (const [label, value] of Object.entries(datos.generalidades)) {
+// Iterar sobre cada propiedad en el objeto 'generalidades'
+for (const [label, value] of Object.entries(datos.generalidades)) {
+
+    // Comprobar si el valor es una LISTA (Array)
+    if (Array.isArray(value)) {
+        // --- Si es una lista, crear el layout vertical para certificaciones ---
+        
+        const certsDiv = document.createElement('div');
+        certsDiv.className = 'info-item-vertical'; // Clase para el layout especial
+
+        // Construir el HTML interno de la lista <ul>
+        const certsListHTML = value.map(cert => `<li>${cert}</li>`).join('');
+
+        certsDiv.innerHTML = `
+            <span class="info-label">${label}:</span>
+            <div class="info-value-list">
+                <ul>${certsListHTML}</ul>
+            </div>
+        `;
+        generalitiesContainer.appendChild(certsDiv);
+
+    } else {
+        // --- Si NO es una lista (es texto normal), crear el layout horizontal ---
+        
         const itemDiv = document.createElement('div');
-        itemDiv.className = 'info-item'; // <-- Nueva clase para la fila
+        itemDiv.className = 'info-item'; // Clase para la fila horizontal
         itemDiv.innerHTML = `
-        <span class="info-label">${label}:</span>
-        <span class="info-value">${value}</span>
-    `; // <-- Nuevo HTML con las clases correctas
-    generalitiesContainer.appendChild(itemDiv);
+            <span class="info-label">${label}:</span>
+            <span class="info-value">${value}</span>
+        `;
+        generalitiesContainer.appendChild(itemDiv);
+    }
 }
     } else {
         // Manejar error si el ID no es válido
