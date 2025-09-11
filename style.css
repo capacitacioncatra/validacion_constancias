@@ -189,7 +189,8 @@ h1, h2, h3 {
 .page-heading-layout {
     display: flex;
     align-items: center;
-    gap: 30px;
+    padding: 20px 0;
+    position: relative; /* Clave para el posicionamiento absoluto */
 }
 
 .heading-logo {
@@ -202,7 +203,10 @@ h1, h2, h3 {
 }
 
 .heading-text {
-    flex: 1;
+    position: absolute; /* Saca el texto del flujo normal */
+    left: 50%; /* Lo mueve al 50% del ancho del contenedor */
+    transform: translateX(-50%); /* Lo regresa la mitad de su propio ancho para centrarlo perfectamente */
+    text-align: center; /* Centra el texto dentro del bloque */
 }
 
 .header-block .intro-text {
