@@ -188,46 +188,27 @@ h1, h2, h3 {
 }
 
 .page-heading-layout {
-  display: grid;
-  grid-template-columns: 200px 1fr 200px; /* logo | centro | spacer */
-  align-items: center;
-  width: 100%;
-  gap: 0;
-}
-
-.heading-logo {
-  width: 200px;
-  justify-self: start;   /* logo a la izquierda */
-  flex-shrink: 0;
-}
-
-.heading-text {
-  text-align: center;    /* centra el H1 y P */
-  justify-self: center;  /* sitúa la columna del texto en el centro */
-  align-self: center;
-}
-
-.heading-spacer {
-  width: 200px;          /* mismo ancho que el logo para equilibrar */
-  justify-self: end;
-  flex-shrink: 0;
-}
-
-/* Responsive: en pantallas pequeñas volvemos a columna */
-@media (max-width: 768px) {
-  .page-heading-layout {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-  .heading-logo, .heading-spacer {
-    width: 100%;
-    justify-self: center;
-  }
+    align-items: center; /* Centra verticalmente el logo y el texto */
+    gap: 30px; /* Espacio entre el logo y el texto */
+    padding: 20px 0; /* Espacio vertical para que no se sienta apretado */
 }
+
+/* 2. El logo tiene un tamaño fijo y no se encoge */
+.heading-logo {
+    flex-shrink: 0; /* Evita que el logo se encoja */
+    width: 200px;
+}
+
+/* 3. El texto ocupa el resto del espacio */
+.heading-text {
+    flex-grow: 1; /* Permite que el contenedor de texto ocupe el espacio sobrante */
+}
+
+/* 4. Estilos para los textos dentro del bloque */
 .header-block h1 {
-    margin: 0 0 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
     font-size: 2.2em;
     color: #ffffff;
     font-weight: 700;
