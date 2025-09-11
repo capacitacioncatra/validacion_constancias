@@ -190,7 +190,7 @@ h1, h2, h3 {
 .page-heading-layout {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Clave: Separa los elementos al máximo */
+    justify-content: space-between;
     width: 100%;
 }
 .heading-logo {
@@ -200,6 +200,8 @@ h1, h2, h3 {
 
 .heading-text {
     text-align: center; /* Centra el h1 y el p dentro de sí mismo */
+    flex: 1; /* ocupa todo el espacio posible */
+    color: white;
 }
 
 .heading-spacer {
