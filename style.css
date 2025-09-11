@@ -179,6 +179,7 @@ h1, h2, h3 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
 }
 
+
 .header-block {
     background-image: linear-gradient(to bottom, #1a1a1a 0%, #000000 70%, #990000 100%);
     padding: 40px;
@@ -186,27 +187,49 @@ h1, h2, h3 {
     margin: -40px -40px 40px -40px;
 }
 
+/* El contenedor del layout interior */
 .page-heading-layout {
-    display: flex;
-    align-items: center;
-    padding: 20px 0;
-    position: relative; /* Clave para el posicionamiento absoluto */
+    display: flex; /* Mantiene al logo y al texto en la misma línea */
+    align-items: center; /* Centra verticalmente el logo */
+    position: relative; /* ¡CRÍTICO! Este es el marco de referencia */
+    min-height: 100px; /* Le damos una altura mínima para que el centrado funcione bien */
 }
 
+/* El contenedor del logo */
 .heading-logo {
-    flex: 0 0 200px;
+    flex: 0 0 200px; /* Ancho fijo para el logo */
+}
+
+/* El contenedor del texto (la pieza clave) */
+.heading-text {
+    position: absolute; /* Saca el texto del flujo normal */
+    left: 50%; /* Lo mueve al 50% del ancho del contenedor */
+    transform: translateX(-50%); /* Lo regresa la mitad de su propio ancho para centrarlo */
+    text-align: center; /* Centra el h1 y el p dentro de este bloque */
+    width: 100%; /* Asegura que tenga un marco de referencia para el centrado */
+}
+
+/* El título "Registros del..." */
+.header-block h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* El nombre del instructor */
+.instructor-name-header {
+    margin: 0;
+    font-size: 1.5em;
+    color: #cccccc;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 .heading-logo img {
     width: 100%;
     height: auto;
-}
-
-.heading-text {
-    position: absolute; /* Saca el texto del flujo normal */
-    left: 70%; /* Lo mueve al 50% del ancho del contenedor */
-    transform: translateX(-50%); /* Lo regresa la mitad de su propio ancho para centrarlo perfectamente */
-    text-align: center; /* Centra el texto dentro del bloque */
 }
 
 .header-block .intro-text {
