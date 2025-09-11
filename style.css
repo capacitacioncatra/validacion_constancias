@@ -188,28 +188,44 @@ h1, h2, h3 {
 }
 
 .page-heading-layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* separa logo, texto y spacer */
-    width: 100%;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px; /* logo | centro | spacer */
+  align-items: center;
+  width: 100%;
+  gap: 0;
 }
 
 .heading-logo {
-    width: 200px; /* ancho fijo */
-    flex-shrink: 0;
+  width: 200px;
+  justify-self: start;   /* logo a la izquierda */
+  flex-shrink: 0;
 }
 
 .heading-text {
-    text-align: center;
-    flex: 1; /* ocupa todo el espacio restante */
-    color: white;
+  text-align: center;    /* centra el H1 y P */
+  justify-self: center;  /* sitúa la columna del texto en el centro */
+  align-self: center;
 }
 
 .heading-spacer {
-    width: 200px; /* mismo ancho que el logo para equilibrar */
-    flex-shrink: 0;
+  width: 200px;          /* mismo ancho que el logo para equilibrar */
+  justify-self: end;
+  flex-shrink: 0;
 }
 
+/* Responsive: en pantallas pequeñas volvemos a columna */
+@media (max-width: 768px) {
+  .page-heading-layout {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .heading-logo, .heading-spacer {
+    width: 100%;
+    justify-self: center;
+  }
+}
 .header-block h1 {
     margin: 0 0 10px;
     font-size: 2.2em;
