@@ -196,7 +196,7 @@ if (generateBtn) {
         //const baseUrl = "file:///D:/Archivos Universidad/Residencia/Catra/index.html";
         
         // Cuando se tenga el dominio real 
-        const baseUrl = "https://capacitacioncatra.github.io/validacion_constancias/"; // 
+        const baseUrl = "https://capacitacioncatra.github.io/validacion_constancias/index.html"; // 
 
         const fullUrl = `${baseUrl}?folio=${folio}`;
 

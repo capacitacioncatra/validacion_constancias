@@ -1,4 +1,8 @@
 const constanciasData = {
+    //git add .
+    //git commit -m"Base de datos actualizada"
+    //git push
+
     
     "CATRA-2025-00147123": {
         nombre: "MANUEL MORALES AVENDAÑO",
