@@ -104,14 +104,18 @@ const instructoresData = {
         
         ],
         certificaciones: [
-            "Operación de flotas eficientes",
-            "Mecánica automotriz", 
-            "Comisión de seguridad e higiene",
-            "Curso de manejo de redes compartidas y aprovechamiento de las TIC ́S",
-            "Ponente: La dirección general de concentración y capacitación laboral",
+            "Ingeniero mecanico",
+            "Instructor autorizado por la STPS 004470", 
+            "Avalado por la SEP CONOCER 217.01",
+            "Operacion del vehiculo de quinta rueda",
+            "Manejo a la defensiva",
+            "Imparticion de cursos de formacion del capital humano de manera invidual y grupal ",
+            "Interpretación de la NORMA ISO 9001:2015",
+            "Auditor en sistemas de gestion con base a la norma ISO 9011:2018",
+            "Manejo y almacenamiento de materiales con uso de montacargas",
         ],
         
-        resumen: "Profesional de la salud especializada en oftalmología, con sólida formación académica y amplia experiencia clínica en oncología ocular, cirugía oftalmológica y prevención de enfermedades visuales, <strong>experiencia en aplicación de toxina botulínica</strong>, ofreciendo tratamientos seguros y efectivos que combinan la salud visual con el bienestar estético. Acreditada por el Consejo Mexicano de Oftalmología y con trayectoria respaldada por la participación en cursos y congresos nacionales e internacionales.",
+        resumen: "Ingeniero mecanico, autorizado por la STPS 004470, avalado por la SEP CONOCER 217.01, auditor en sistemas de gestion con base a la norma ISO 9011:2018",
 
         generalidades: {
             "Nombre completo": "EDWIN ALAN MARTINEZ PEREZ",
@@ -119,11 +123,11 @@ const instructoresData = {
             "Folio": "inst002",
             "Especialidad": "INGENIERO MECANICO",
              "Certificaciones": [
-                "<strong>Operación de flotas eficientes</strong>",
-                "<strong>Prevención de adicciones en el ámbito laboral:</strong> NOM-030-STPS-2009 servicios preventivos de seguridad y salud en el trabajo ",
-                "<strong>NOM-026-STPS-2008 Colores y señales de seguridad e higiene Centro/ STPS </strong>",
-                "<strong>Movilidad motorizada:</strong> Profesionalización del autotransporte",
-                "<strong>Mecánico automotriz:</strong> Conductor de transporte ejecutivo"
+                "<strong>Ingeniero mecanico</strong>",
+                "<strong>Instructor autorizado por la STPS 004470:</strong> Avalado por la SEP CONOCER 217.01",
+                "<strong>Operacion del vehiculo de quinta rueda/ STPS </strong>",
+                "<strong>Manejo a la defensiva:</strong>Imparticion de cursos de formacion del capital humano de manera individual y grupal",
+                "<strong>Auditor en sistemas de gestion con base a la Norma ISO 9011:2018:</strong> Manejo y almacenamiento de materiales con uso de montacargas"
             ]
             
         }
