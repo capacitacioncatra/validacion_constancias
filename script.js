@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const validationButton = document.getElementById('instructor-link');
             if (validationButton && datos.instructorId) {
-                validationButton.href = `https://capacitacioncatra.github.io/validacion_constancias/instructor.html?id=${datos.instructorId}`;
+                validationButton.href = `https://.github.io/validacion_constancias/instructor.html?id=${datos.instructorId}`;
             }
         } else {
             document.getElementById('status-badge').textContent = 'NO VÁLIDO';
@@ -196,7 +196,7 @@ if (generateBtn) {
         //const baseUrl = "file:///D:/Archivos Universidad/Residencia/Catra/index.html";
         
         // Cuando se tenga el dominio real 
-        const baseUrl = "https://github.com/capacitacioncatra/validacion_constancias.git"; // 
+        const baseUrl = "https://capacitacioncatra.github.io/validacion_constancias/"; // 
 
         const fullUrl = `${baseUrl}?folio=${folio}`;
 
