@@ -74,11 +74,13 @@ if (instructorPage) {
         if (datos.cv_tipo === 'pdf' && datos.cv_pdf) {
             // Mostrar PDF
             console.log('📄 Mostrando CV en formato PDF');
+            console.log('📄 Ruta del PDF:', datos.cv_pdf);
             pdfContainer.style.display = 'block';
             carouselContainerWrapper.style.display = 'none';
 
             const pdfViewer = document.getElementById('pdf-viewer');
             pdfViewer.src = datos.cv_pdf;
+            console.log('📄 PDF cargado en iframe con src:', pdfViewer.src);
         } else if (datos.cv_tipo === 'imagenes' && datos.cv_paginas.length > 0) {
             // Mostrar carrusel de imágenes
             console.log('🖼️ Mostrando CV en formato de imágenes');
