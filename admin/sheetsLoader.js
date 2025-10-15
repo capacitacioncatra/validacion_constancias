@@ -105,7 +105,11 @@ async function loadInstructoresData() {
 
         // Convertir array a objeto indexado por ID
         instructoresData = {};
+        console.log('📊 Procesando rows:', rows.length, 'filas');
+        console.log('📊 Primera fila (ejemplo):', rows[0]);
+
         rows.forEach(row => {
+            console.log('🔍 Procesando instructor ID:', row.ID);
             if (row.ID) {
                 // Procesar certificaciones (separadas por |)
                 const certificaciones = row.Certificaciones
@@ -151,6 +155,8 @@ async function loadInstructoresData() {
                         "Certificaciones": cedulas
                     }
                 };
+
+                console.log('✅ Instructor guardado:', row.ID, instructoresData[row.ID]);
             }
         });
 
