@@ -138,8 +138,10 @@
         </div> <!-- fin de .main-content-layout -->
     </main>
 
-    <!-- Enlazamos nuestro archivo de JavaScript externo -->
-    <script src="admin/Instructors.js"></script>
+    <!-- Cargar configuración y datos desde Google Sheets -->
+    <script src="admin/config.js"></script>
+    <script src="admin/sheetsLoader.js"></script>
+    <!-- LUEGO cargamos el script principal -->
     <script src="script.js"></script>
 
 </body>

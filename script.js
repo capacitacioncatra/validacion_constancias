@@ -2,9 +2,19 @@
 
 // ÚNICO BLOQUE QUE ENVUELVE TODO EL CÓDIGO
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     // --- LÓGICA DE DIAGNÓSTICO ---
-     console.log("¡Script principal cargado!");
+    console.log("¡Script principal cargado!");
+
+    // Inicializar carga de datos desde Google Sheets
+    initializeData().then(() => {
+        console.log("📊 Datos listos, ejecutando lógica de la página");
+        ejecutarLogicaPagina();
+    });
+});
+
+// Función que contiene toda la lógica de la página
+function ejecutarLogicaPagina() {
 
     // =======================================================
     // --- LÓGICA PARA LA PÁGINA DE VERIFICACIÓN (index.html) ---
@@ -228,12 +238,12 @@ if (generateBtn) {
     // --- LÓGICA PARA ACTIVAR LAS ANIMACIONES DE ENTRADA ---
     // =======================================================
     const elementsToAnimate = document.querySelectorAll('.header-block, .partner-logos, .main-content-layout, .brand-section, .certificate-section');
-    
+
     if (elementsToAnimate.length > 0) {
-        
+
         elementsToAnimate.forEach(element => {
             element.classList.add('animate-on-load');
         });
     }
 
-}); 
+} // Fin de ejecutarLogicaPagina()

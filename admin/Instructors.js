@@ -1,6 +1,7 @@
 // admin/instructors.js
 
 const instructoresData = {
+    
     "inst001": {
         nombre: "Vianey Romero Manzano",
         especialidad: "Médico Oftalmólogo",
