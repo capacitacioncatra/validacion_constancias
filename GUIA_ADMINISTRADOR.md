@@ -108,6 +108,33 @@ Si un instructor tiene un CV en formato de imágenes:
 
 ---
 
+## 🎯 PASO 4: Generar Códigos QR para las Constancias
+
+### ¿Para qué sirve?
+El generador de QR crea códigos QR que enlazan directamente a la verificación online de cada constancia. Puedes imprimir estos QR en las constancias físicas.
+
+### Cómo Acceder:
+**URL del Generador:**
+```
+https://Manue-777.github.io/Pagina_Catra/admin/Qr_generator.html
+```
+
+### Pasos para Generar un QR:
+
+1. **Abre el generador de QR** usando la URL de arriba
+2. **Ingresa el folio** de la constancia (debe existir en Google Sheets)
+3. **Haz clic en "Generar Código QR"** o presiona Enter
+4. **Descarga la imagen** del QR haciendo clic en "Descargar QR como PNG"
+5. **Imprime o inserta** el QR en la constancia física
+
+### Ventajas:
+- ✅ Puedes usar el generador desde cualquier computadora con internet
+- ✅ No necesitas instalar ningún programa
+- ✅ Los QR generados son permanentes y funcionarán siempre
+- ✅ Cualquier persona puede escanear el QR para verificar la autenticidad
+
+---
+
 ## 📞 Soporte
 
 Si tienes problemas o dudas, contacta al desarrollador del sistema.

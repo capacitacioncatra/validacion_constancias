@@ -9,66 +9,166 @@
     <style>
         /* Estilos adicionales solo para esta página */
         .generator-container {
-            max-width: 500px;
+            max-width: 600px;
             margin: 50px auto;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+
+        .generator-container h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .generator-container .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
         #folio-input {
             width: 100%;
-            padding: 10px;
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            padding: 12px 15px;
+            font-size: 1em;
+            border: 2px solid #ddd;
+            border-radius: 5px;
             box-sizing: border-box;
+            transition: border-color 0.3s;
+            font-family: monospace;
         }
+
+        #folio-input:focus {
+            outline: none;
+            border-color: #E60000;
+        }
+
         #generate-btn {
-            padding: 10px 20px;
-            font-size: 1.2em;
+            padding: 12px 30px;
+            font-size: 1.1em;
             cursor: pointer;
             background-color: #E60000;
             color: white;
             border: none;
             border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 600;
         }
+
+        #generate-btn:hover {
+            background-color: #cc0000;
+        }
+
         #qrcode-container {
             margin-top: 30px;
-            padding: 20px;
+            padding: 30px;
             border: 2px dashed #ddd;
+            border-radius: 8px;
             min-height: 256px;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #fafafa;
         }
+
+        #qrcode-container p {
+            color: #999;
+            font-style: italic;
+        }
+
         #download-link {
-            display: none; /* Oculto por defecto */
+            display: none;
             margin-top: 20px;
-            font-size: 1.1em;
+            padding: 10px 25px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        #download-link:hover {
+            background-color: #218838;
+        }
+
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #E60000;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: #E60000;
+        }
+
+        .instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin: 8px 0;
+            color: #555;
         }
     </style>
 </head>
 <body class="page-background">
 
     <main class="content-container generator-container">
-        <img src="../Images/Logo.png" alt="Logo CATRA" style="max-width: 200px; margin-bottom: 20px;">
+        <img src="../Images/Logo2.png" alt="Logo CATRA" style="max-width: 180px; margin-bottom: 20px;">
         <h1>Generador de Códigos QR</h1>
-        
-        <label for="folio-input">Introduce el Folio de la Constancia:</label>
-        <input type="text" id="folio-input" placeholder="Ej: CATRA-2025-00147122">
-        
-        <button id="generate-btn">Generar QR</button>
-        
-        <div id="qrcode-container">
-            <p>Aquí aparecerá el código QR</p>
+        <p class="subtitle">Sistema de verificación de constancias CATRA</p>
+
+        <div class="input-group">
+            <label for="folio-input">Folio de la Constancia:</label>
+            <input type="text" id="folio-input" placeholder="Ejemplo: CATRA-2025-00147123">
         </div>
-        
-        <a id="download-link" href="#" download="qr-folio.png">Descargar QR como PNG</a>
+
+        <button id="generate-btn">🔄 Generar Código QR</button>
+
+        <div id="qrcode-container">
+            <p>El código QR aparecerá aquí</p>
+        </div>
+
+        <a id="download-link" href="#" download="qr-folio.png">⬇️ Descargar QR como PNG</a>
+
+        <div class="instructions">
+            <h3>📋 Instrucciones de Uso:</h3>
+            <ol>
+                <li>Ingresa el <strong>folio exacto</strong> de la constancia que deseas generar</li>
+                <li>Haz clic en <strong>"Generar Código QR"</strong> o presiona Enter</li>
+                <li>El código QR se generará automáticamente</li>
+                <li>Haz clic en <strong>"Descargar QR"</strong> para guardar la imagen</li>
+                <li>Puedes imprimir el QR y agregarlo a las constancias físicas</li>
+            </ol>
+            <p><strong>Nota:</strong> El QR generado enlazará a la página de verificación online donde se mostrarán todos los datos de la constancia.</p>
+        </div>
     </main>
     
     <!-- 1. Cargamos la librería externa para generar QRs -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
-    <!-- 2. Cargamos nuestro propio script para darle la lógica -->
-    <script src="../script.js"></script>
+    <!-- 2. Cargamos el script específico del generador de QR -->
+    <script src="qr-generator-script.js"></script>
 
 </body>
 </html>
