@@ -66,15 +66,39 @@ if (instructorPage) {
         document.getElementById('instructor-nombre').textContent = datos.nombre;
         document.getElementById('instructor-resumen').innerHTML = datos.resumen;
 
-        const carouselContainer = document.getElementById('carousel-images-container');
-        carouselContainer.innerHTML = '';
-        datos.cv_paginas.forEach((pagina, index) => {
-            const img = document.createElement('img');
-            img.src = `images/${pagina}`;
-            img.alt = `CV de ${datos.nombre} - Página ${index + 1}`;
-            if (index === 0) img.classList.add('active');
-            carouselContainer.appendChild(img);
-        });
+        // Detectar si es PDF o imágenes
+        const pdfContainer = document.getElementById('pdf-container');
+        const carouselContainerWrapper = document.getElementById('carousel-container');
+        const carouselImagesContainer = document.getElementById('carousel-images-container');
+
+        if (datos.cv_tipo === 'pdf' && datos.cv_pdf) {
+            // Mostrar PDF
+            console.log('📄 Mostrando CV en formato PDF');
+            pdfContainer.style.display = 'block';
+            carouselContainerWrapper.style.display = 'none';
+
+            const pdfViewer = document.getElementById('pdf-viewer');
+            pdfViewer.src = datos.cv_pdf;
+        } else if (datos.cv_tipo === 'imagenes' && datos.cv_paginas.length > 0) {
+            // Mostrar carrusel de imágenes
+            console.log('🖼️ Mostrando CV en formato de imágenes');
+            pdfContainer.style.display = 'none';
+            carouselContainerWrapper.style.display = 'block';
+
+            carouselImagesContainer.innerHTML = '';
+            datos.cv_paginas.forEach((pagina, index) => {
+                const img = document.createElement('img');
+                img.src = `images/${pagina}`;
+                img.alt = `CV de ${datos.nombre} - Página ${index + 1}`;
+                if (index === 0) img.classList.add('active');
+                carouselImagesContainer.appendChild(img);
+            });
+        } else {
+            // No hay CV disponible
+            console.warn('⚠️ No hay CV disponible para este instructor');
+            pdfContainer.style.display = 'none';
+            carouselContainerWrapper.style.display = 'none';
+        }
 
         const credentialsContainer = document.getElementById('credentials-list-container');
         credentialsContainer.innerHTML = '';

@@ -112,25 +112,40 @@ async function loadInstructoresData() {
                     ? row.Certificaciones.split('|').map(cert => cert.trim())
                     : [];
 
-                // Procesar páginas del CV (separadas por |)
-                const cv_paginas = row.CV_Paginas
-                    ? row.CV_Paginas.split('|').map(page => page.trim())
-                    : [];
-
                 // Procesar cédulas (separadas por |)
                 const cedulas = row.Cedulas
                     ? row.Cedulas.split('|').map(ced => ced.trim())
                     : [];
 
+                // Detectar si es PDF o imágenes
+                let cv_tipo = 'imagenes'; // por defecto
+                let cv_contenido = [];
+
+                // Soportar tanto "CV_PDF" como "CV PDF"
+                const cvPdfField = row.CV_PDF || row['CV PDF'] || '';
+                const cvPaginasField = row.CV_Paginas || row['CV Paginas'] || '';
+
+                if (cvPdfField && cvPdfField.trim()) {
+                    // Si hay un PDF, usar ese
+                    cv_tipo = 'pdf';
+                    cv_contenido = cvPdfField.trim();
+                } else if (cvPaginasField && cvPaginasField.trim()) {
+                    // Si hay páginas de imágenes, usar esas
+                    cv_tipo = 'imagenes';
+                    cv_contenido = cvPaginasField.split('|').map(page => page.trim());
+                }
+
                 instructoresData[row.ID] = {
                     nombre: row.Nombre || '',
                     especialidad: row.Especialidad || '',
-                    cv_paginas: cv_paginas,
+                    cv_tipo: cv_tipo,
+                    cv_paginas: cv_tipo === 'imagenes' ? cv_contenido : [],
+                    cv_pdf: cv_tipo === 'pdf' ? cv_contenido : '',
                     certificaciones: certificaciones,
                     resumen: row.Resumen || '',
                     generalidades: {
                         "Nombre completo": row.Nombre || '',
-                        "Curp:": row.CURP || '',
+                        "Curp:": row.CURP || row.Curp || '',
                         "Folio": row.ID || '',
                         "Especialidad": row.Especialidad || '',
                         "Certificaciones": cedulas

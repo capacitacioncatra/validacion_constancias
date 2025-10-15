@@ -49,8 +49,11 @@ El sistema ahora está conectado a **Google Sheets**. Ya **NO es necesario edita
 | **CURP** | CURP del instructor | RAIC750315HDFRRL09 |
 | **Resumen** | Descripción profesional | Ingeniero con 20 años de experiencia... |
 | **Cedulas** | Cédulas separadas por \| | Cédula profesional 123456\|Maestría en Seguridad Industrial |
-| **CV_Paginas** | Rutas de imágenes del CV separadas por \| | ../Images/CVs/Carlos/CV1.jpg\|../Images/CVs/Carlos/CV2.jpg |
+| **CV PDF** | Ruta al archivo PDF del CV (RECOMENDADO) | ../Images/CVs/Carlos/CV_Carlos.pdf |
+| **CV Paginas** | Rutas de imágenes del CV separadas por \| (alternativa al PDF) | ../Images/CVs/Carlos/CV1.jpg\|../Images/CVs/Carlos/CV2.jpg |
 | **Certificaciones** | Lista de certificaciones separadas por \| | Certificado ISO 9001\|Instructor STPS\|Evaluador CONOCER |
+
+**💡 NUEVO:** Ahora puedes usar **un solo archivo PDF** en lugar de múltiples imágenes para el CV.
 
 ### 3. IMPORTANTE: Separador de listas
 - Cuando una columna contiene **múltiples elementos** (certificaciones, páginas del CV, cédulas), usa el símbolo **`|`** (pipe) para separarlos
@@ -62,16 +65,37 @@ El sistema ahora está conectado a **Google Sheets**. Ya **NO es necesario edita
 
 ---
 
-## 🖼️ PASO 3: Subir Imágenes del CV
+## 🖼️ PASO 3: Subir CV del Instructor
 
-Si un instructor tiene un CV en formato de imágenes:
+Ahora tienes **dos opciones** para subir el CV:
+
+### **Opción A: Usar PDF (RECOMENDADO) 📄**
+
+1. **Crea una carpeta** para el instructor en: `Images/CVs/NombreInstructor/`
+2. **Sube el archivo PDF** del CV completo (ejemplo: `CV_Carlos.pdf`)
+3. **En Google Sheets**, en la columna `CV PDF`, escribe la ruta:
+   ```
+   ../Images/CVs/NombreInstructor/CV_Carlos.pdf
+   ```
+4. **Deja vacía** la columna `CV Paginas`
+
+**Ventajas:**
+- ✅ **Un solo archivo** (más fácil de gestionar)
+- ✅ **Mejor calidad** (texto seleccionable)
+- ✅ **Más rápido** de cargar
+- ✅ **Más profesional**
+
+### **Opción B: Usar Imágenes (Alternativa) 🖼️**
 
 1. **Crea una carpeta** para el instructor en: `Images/CVs/NombreInstructor/`
 2. **Sube las imágenes** del CV (CV1.jpg, CV2.jpg, CV3.jpg, etc.)
-3. **En Google Sheets**, en la columna `CV_Paginas`, escribe las rutas separadas por `|`:
+3. **En Google Sheets**, en la columna `CV Paginas`, escribe las rutas separadas por `|`:
    ```
    ../Images/CVs/NombreInstructor/CV1.jpg|../Images/CVs/NombreInstructor/CV2.jpg|../Images/CVs/NombreInstructor/CV3.jpg
    ```
+4. **Deja vacía** la columna `CV PDF`
+
+**Nota:** Si ambas columnas tienen datos, el sistema usará el PDF por prioridad.
 
 ---
 
