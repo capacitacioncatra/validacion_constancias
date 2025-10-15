@@ -74,13 +74,14 @@ async function loadConstanciasData() {
             if (row.Folio) {
                 constanciasData[row.Folio] = {
                     nombre: row.Nombre || '',
-                    curp: row.CURP || '',
+                    curp: row.CURP || row.Curp || '',
                     curso: row.Curso || '',
                     duracion: row.Duracion || '',
                     calificacion: row.Calificacion || '',
                     fecha: row.Fecha || '',
                     folio: row.Folio || '',
-                    instructorId: row.InstructorID || ''
+                    // Soportar tanto "InstructorID" como "Instructor Id"
+                    instructorId: row.InstructorID || row['Instructor Id'] || ''
                 };
             }
         });

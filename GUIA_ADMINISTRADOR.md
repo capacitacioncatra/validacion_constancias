@@ -18,12 +18,14 @@ El sistema ahora está conectado a **Google Sheets**. Ya **NO es necesario edita
 |---------|-------------|---------|
 | **Folio** | Número único de la constancia | CATRA-2025-00147125 |
 | **Nombre** | Nombre completo del participante | JUAN PÉREZ GARCÍA |
-| **CURP** | CURP del participante | PEGJ850505HDFRRN01 |
+| **Curp** | CURP del participante | PEGJ850505HDFRRN01 |
 | **Curso** | Nombre del curso | MANEJO DE MONTACARGAS |
 | **Duracion** | Duración del curso | 40 HORAS |
 | **Calificacion** | Calificación obtenida | 9.5 / 10.0 |
 | **Fecha** | Fecha de emisión | 15 DE OCTUBRE DE 2025 |
-| **InstructorID** | ID del instructor (debe existir) | inst001 |
+| **Instructor Id** | ID del instructor (debe existir) | inst001 |
+
+**⚠️ IMPORTANTE:** La columna **"Instructor Id"** debe contener el ID exacto de un instructor que exista en la hoja de Instructores. Este enlace permite que el botón "Validación Oficial" lleve al perfil del instructor.
 
 ### 3. Guarda el documento
 - Los cambios se guardan automáticamente en Google Sheets
